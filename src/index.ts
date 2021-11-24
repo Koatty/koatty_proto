@@ -3,7 +3,7 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:07:11
- * @LastEditTime: 2021-11-24 16:50:16
+ * @LastEditTime: 2021-11-24 17:20:45
  */
 import protobufjs, { IService, IType, IEnum, Root } from 'protobufjs';
 import { printEnum } from './Enum';
@@ -38,9 +38,9 @@ export function parseProto(source: string): protobufjs.INamespace {
  * @export
  * @param {protobufjs.INamespace} json
  * @param {OptionType} [options]
- * @returns {Record<string, any[]>}
+ * @returns {object}
  */
-export function parseMethods(json: protobufjs.INamespace, options?: OptionType): Record<string, any[]> {
+export function parseMethods(json: protobufjs.INamespace, options?: OptionType): object {
     if (!options) {
         options = defaultOptions;
     }
@@ -70,9 +70,9 @@ export function parseMethods(json: protobufjs.INamespace, options?: OptionType):
  * @export
  * @param {protobufjs.INamespace} json
  * @param {OptionType} [options]
- * @returns {Record<string, any[]>}
+ * @returns {object>}
  */
-export function parseFields(json: protobufjs.INamespace, options?: OptionType): Record<string, any[]> {
+export function parseFields(json: protobufjs.INamespace, options?: OptionType): object {
     if (!options) {
         options = defaultOptions;
     }
@@ -86,9 +86,6 @@ export function parseFields(json: protobufjs.INamespace, options?: OptionType): 
                     if (category === 'fields') {
                         res[name] = printField(name, value as IType, options);
                     }
-                    if (category === 'values') {
-                        res[name] = printEnum(name, value as IEnum, options);
-                    }
                     if (category === 'nested') {
                         res[name] = parseFields(value, options);
                     }
@@ -98,6 +95,40 @@ export function parseFields(json: protobufjs.INamespace, options?: OptionType): 
     }
     return res;
 }
+
+/**
+ * parseValues
+ *
+ * @export
+ * @param {protobufjs.INamespace} json
+ * @param {OptionType} [options]
+ * @returns {object} 
+ */
+export function parseValues(json: protobufjs.INamespace, options?: OptionType): object {
+    if (!options) {
+        options = defaultOptions;
+    }
+    const nested = json.nested;
+    const res: any = {};
+    if (nested) {
+        for (const name in nested) {
+            if (Object.prototype.hasOwnProperty.call(nested, name)) {
+                const value = nested[name];
+                Object.keys(value).map(category => {
+                    if (category === 'values') {
+                        res[name] = printEnum(name, value as IEnum, options);
+                    }
+                    if (category === 'nested') {
+                        res[name] = parseValues(value, options);
+                    }
+                });
+            }
+        }
+    }
+    return res;
+}
+
+
 
 /**
  *

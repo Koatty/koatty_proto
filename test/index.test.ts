@@ -3,12 +3,12 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:24:07
- * @LastEditTime: 2021-11-24 10:30:16
+ * @LastEditTime: 2021-11-24 17:17:48
  */
 import assert from "assert";
 import { readFileSync } from "fs";
 import path from "path";
-import { parseFields, parseMethods, parseProto } from "../src/index";
+import { parseFields, parseMethods, parseProto, parseValues } from "../src/index";
 
 const protoFile = path.resolve("./test/hello.proto");
 
@@ -34,6 +34,10 @@ describe("protobuf", () => {
         console.log(fields);
         assert.equal(Object.hasOwnProperty.call(fields, "HelloRequest"), true);
         assert.equal(Object.hasOwnProperty.call(fields, "HelloReply"), true);
+    });
+    test("parseValues", async function () {
+        fields = parseValues(res);
+        console.log(fields);
         assert.equal(Object.hasOwnProperty.call(fields, "PhoneType"), true);
     });
 });
