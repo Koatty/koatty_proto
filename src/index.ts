@@ -3,7 +3,7 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:07:11
- * @LastEditTime: 2021-11-24 17:20:45
+ * @LastEditTime: 2021-11-24 19:39:06
  */
 import protobufjs, { IService, IType, IEnum, Root } from 'protobufjs';
 import { printEnum } from './Enum';
@@ -139,7 +139,7 @@ export function parseValues(json: protobufjs.INamespace, options?: OptionType): 
  * @param {string} [packageName]
  * @returns {protobufjs.INamespace}  
  */
-export function parseProtoRoot(root: Root, packageName?: string): protobufjs.INamespace {
+export function parseProtoRoot(root: Root, packageName?: string): any {
     if (packageName) {
         const _root = root.lookup(packageName);
         return _root?.toJSON();
