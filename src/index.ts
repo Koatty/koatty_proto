@@ -3,7 +3,7 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:07:11
- * @LastEditTime: 2021-11-24 10:10:11
+ * @LastEditTime: 2021-11-24 11:44:18
  */
 import protobufjs, { IService, IType, IEnum, Root } from 'protobufjs';
 import { printEnum } from './Enum';
@@ -21,7 +21,7 @@ const defaultOptions: OptionType = {
 };
 
 /**
- *
+ * parseProto
  *
  * @export
  * @param {string} source
@@ -38,9 +38,9 @@ export function parseProto(source: string): protobufjs.INamespace {
  * @export
  * @param {protobufjs.INamespace} json
  * @param {OptionType} [options]
- * @returns {*}  {string[]}
+ * @returns {Record<string, unknown>}
  */
-export function parseMethods(json: protobufjs.INamespace, options?: OptionType): string[] {
+export function parseMethods(json: protobufjs.INamespace, options?: OptionType): Record<string, unknown> {
     if (!options) {
         options = defaultOptions;
     }
@@ -70,9 +70,9 @@ export function parseMethods(json: protobufjs.INamespace, options?: OptionType):
  * @export
  * @param {protobufjs.INamespace} json
  * @param {OptionType} [options]
- * @returns {*}  {string[]}
+ * @returns {Record<string, unknown>}
  */
-export function parseFields(json: protobufjs.INamespace, options?: OptionType): string[] {
+export function parseFields(json: protobufjs.INamespace, options?: OptionType): Record<string, unknown> {
     if (!options) {
         options = defaultOptions;
     }
@@ -106,9 +106,9 @@ export function parseFields(json: protobufjs.INamespace, options?: OptionType): 
  * @param {Root} root
  * @param {OptionType} options
  * @param {string} [packageName]
- * @returns {*}  
+ * @returns {protobufjs.INamespace}  
  */
-export function parseProtoRoot(root: Root, packageName?: string) {
+export function parseProtoRoot(root: Root, packageName?: string): protobufjs.INamespace {
     if (packageName) {
         const _root = root.lookup(packageName);
         return _root?.toJSON();
