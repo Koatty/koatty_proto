@@ -3,7 +3,7 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:19:07
- * @LastEditTime: 2021-11-24 22:55:39
+ * @LastEditTime: 2021-11-25 00:02:33
  */
 import { IType, IField, IMapField } from 'protobufjs';
 import { OptionType } from './interface';
@@ -15,13 +15,13 @@ const TYPES: {
     float: 'number',
     int32: 'number',
     int64: 'string',
-    uint32: 'string',
+    uint32: 'number',
     uint64: 'string',
-    sint32: 'string',
+    sint32: 'number',
     sint64: 'string',
-    fixed32: 'string',
+    fixed32: 'number',
     fixed64: 'string',
-    sfixed32: 'string',
+    sfixed32: 'number',
     sfixed64: 'string',
     bool: 'boolean',
     string: 'string',
