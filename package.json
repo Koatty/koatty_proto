@@ -1,6 +1,6 @@
 {
   "name": "koatty_proto",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "A converter to transform from Protobuf to Typescript DTO.",
   "scripts": {
     "build": "del-cli --force dist && tsc",
