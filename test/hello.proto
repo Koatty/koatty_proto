@@ -1,0 +1,19 @@
+syntax = "proto3";
+service Greeter {
+  rpc SayHello(HelloRequest) returns (HelloReply) {}
+  rpc SayHello2(HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+  uint64 id = 1;
+  string name = 2;
+  PhoneType phone = 3;
+}
+
+message HelloReply { string message = 1; }
+//枚举消息类型
+enum PhoneType {
+  MOBILE = 0; // proto3版本中，首成员必须为0，成员不应有相同的值
+  HOME = 1;
+  WORK = 2;
+}
