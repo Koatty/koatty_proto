@@ -3,7 +3,7 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:07:11
- * @LastEditTime: 2021-11-24 11:44:18
+ * @LastEditTime: 2021-11-24 16:50:16
  */
 import protobufjs, { IService, IType, IEnum, Root } from 'protobufjs';
 import { printEnum } from './Enum';
@@ -38,9 +38,9 @@ export function parseProto(source: string): protobufjs.INamespace {
  * @export
  * @param {protobufjs.INamespace} json
  * @param {OptionType} [options]
- * @returns {Record<string, unknown>}
+ * @returns {Record<string, any[]>}
  */
-export function parseMethods(json: protobufjs.INamespace, options?: OptionType): Record<string, unknown> {
+export function parseMethods(json: protobufjs.INamespace, options?: OptionType): Record<string, any[]> {
     if (!options) {
         options = defaultOptions;
     }
@@ -70,9 +70,9 @@ export function parseMethods(json: protobufjs.INamespace, options?: OptionType):
  * @export
  * @param {protobufjs.INamespace} json
  * @param {OptionType} [options]
- * @returns {Record<string, unknown>}
+ * @returns {Record<string, any[]>}
  */
-export function parseFields(json: protobufjs.INamespace, options?: OptionType): Record<string, unknown> {
+export function parseFields(json: protobufjs.INamespace, options?: OptionType): Record<string, any[]> {
     if (!options) {
         options = defaultOptions;
     }
