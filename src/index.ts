@@ -3,10 +3,10 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:07:11
- * @LastEditTime: 2021-11-24 19:39:06
+ * @LastEditTime: 2021-11-30 15:23:55
  */
 import protobufjs, { IService, IType, IEnum, Root } from 'protobufjs';
-import { printEnum } from './Enum';
+import { printEnum } from './enum';
 import { printField } from './field';
 import { OptionType } from './interface';
 import { printMethod } from './method';
