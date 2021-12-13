@@ -1,6 +1,6 @@
 {
   "name": "koatty_proto",
-  "version": "1.0.18",
+  "version": "1.1.1",
   "description": "A converter to transform from Protobuf to Typescript DTO.",
   "scripts": {
     "build": "del-cli --force dist && tsc",
@@ -43,6 +43,9 @@
     "typescript": "^4.x.x"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.4.4",
+    "@grpc/proto-loader": "^0.6.7",
+    "koatty_lib": "^1.x.x",
     "protobufjs": "^6.11.2"
   },
   "husky": {
