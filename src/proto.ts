@@ -3,7 +3,7 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-12-13 16:33:32
- * @LastEditTime: 2021-12-13 16:33:33
+ * @LastEditTime: 2021-12-13 17:25:46
  */
 import * as Helper from "koatty_lib";
 import { GrpcObject, loadPackageDefinition, ServiceDefinition } from "@grpc/grpc-js";
@@ -40,14 +40,13 @@ export function LoadProto(protoFile: string, options: Options = {
     enums: String,
     defaults: true,
     oneofs: true
-}): ProtoDef[] {
+}): GrpcObject {
     if (!Helper.isFile(protoFile)) {
         throw new Error("no such file: " + protoFile);
     }
     // Loading file
     const parsedObj = loadSync(protoFile, options);
-    const def = loadPackageDefinition(parsedObj);
-    return ListServices(def);
+    return loadPackageDefinition(parsedObj);
 }
 
 /**
