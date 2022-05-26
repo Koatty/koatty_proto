@@ -1,6 +1,6 @@
 {
   "name": "koatty_proto",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "A converter to transform from Protobuf to Typescript DTO.",
   "scripts": {
     "build": "npm run build:js && npm run build:dts && npm run build:doc && npm run build:cp",
