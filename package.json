@@ -51,10 +51,10 @@
     "typescript": "^4.x.x"
   },
   "dependencies": {
-    "@grpc/grpc-js": "^1.6.7",
-    "@grpc/proto-loader": "^0.6.12",
+    "@grpc/grpc-js": "^1.6.12",
+    "@grpc/proto-loader": "^0.7.2",
     "koatty_lib": "^1.x.x",
-    "protobufjs": "^6.11.3"
+    "protobufjs": "^7.1.0"
   },
   "peerDependencies": {
     "koatty_lib": "^1.x.x"
