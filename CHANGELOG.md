@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.9](https://github.com/Koatty/koatty_proto/compare/v1.1.8...v1.1.9) (2022-10-31)
+
+
+### Bug Fixes
+
+* upgrade deps ([06fc115](https://github.com/Koatty/koatty_proto/commit/06fc1157b4bc2014a49a240626a7280b808d2acd))
+
 ### [1.1.8](https://github.com/Koatty/koatty_proto/compare/v1.1.7...v1.1.8) (2022-05-27)
 
 ### [1.1.7](https://github.com/Koatty/koatty_proto/compare/v1.1.6...v1.1.7) (2022-05-26)
