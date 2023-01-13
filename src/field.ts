@@ -3,29 +3,29 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:19:07
- * @LastEditTime: 2021-11-25 00:02:33
+ * @LastEditTime: 2023-01-13 10:20:03
  */
 import { IType, IField, IMapField } from 'protobufjs';
 import { OptionType } from './interface';
 
 const TYPES: {
-    [key: string]: string;
+  [key: string]: string;
 } = {
-    double: 'number',
-    float: 'number',
-    int32: 'number',
-    int64: 'string',
-    uint32: 'number',
-    uint64: 'string',
-    sint32: 'number',
-    sint64: 'string',
-    fixed32: 'number',
-    fixed64: 'string',
-    sfixed32: 'number',
-    sfixed64: 'string',
-    bool: 'boolean',
-    string: 'string',
-    bytes: 'string'
+  double: 'number',
+  float: 'number',
+  int32: 'number',
+  int64: 'string',
+  uint32: 'number',
+  uint64: 'string',
+  sint32: 'number',
+  sint64: 'string',
+  fixed32: 'number',
+  fixed64: 'string',
+  sfixed32: 'number',
+  sfixed64: 'string',
+  bool: 'boolean',
+  string: 'string',
+  bytes: 'string'
 };
 
 /**
@@ -35,10 +35,10 @@ const TYPES: {
  * @returns {*}  
  */
 function getKeyType(p: Partial<IMapField>) {
-    if (p.keyType) {
-        return TYPES[p.keyType] || p.keyType;
-    }
-    return '';
+  if (p.keyType) {
+    return TYPES[p.keyType] || p.keyType;
+  }
+  return '';
 }
 
 /**
@@ -51,27 +51,27 @@ function getKeyType(p: Partial<IMapField>) {
  * @returns {*}  
  */
 function readField(name: string,
-    content: {
-        [k: string]: IField;
-    }
+  content: {
+    [k: string]: IField;
+  }
 ) {
-    const params = Object.keys(content).map(paramName => {
-        const paramValue = content[paramName];
-
-        return {
-            type: TYPES[paramValue.type] || paramValue.type,
-            keyType: getKeyType(paramValue),
-            name: paramName,
-            rule: paramValue.rule,
-            id: paramValue.id
-        };
-    });
+  const params = Object.keys(content).map(paramName => {
+    const paramValue = content[paramName];
 
     return {
-        category: 'fields',
-        name: name,
-        params: params.sort((a, b) => a.id - b.id)
+      type: TYPES[paramValue.type] || paramValue.type,
+      keyType: getKeyType(paramValue),
+      name: paramName,
+      rule: paramValue.rule,
+      id: paramValue.id
     };
+  });
+
+  return {
+    category: 'fields',
+    name: name,
+    params: params.sort((a, b) => a.id - b.id)
+  };
 }
 
 /**
@@ -84,28 +84,28 @@ function readField(name: string,
  * @returns {*}  
  */
 export function printField(name: string, fieldParams: IType, options: OptionType) {
-    const content = fieldParams.fields;
+  const content = fieldParams.fields;
 
-    const item = readField(name, content);
+  const item = readField(name, content);
 
-    const arrs = item.params.map(param => {
-        if (param.rule === 'repeated') {
-            return `  ${param.name}: ${param.type}[];`;
-        }
-        if (param.keyType) {
-            return `  ${param.name}: {[key: ${param.keyType}]: ${param.type}};`;
-        }
-        return `  ${param.name}: ${param.type};`;
-    });
+  const arrs = item.params.map(param => {
+    if (param.rule === 'repeated') {
+      return `  ${param.name}: ${param.type}[];`;
+    }
+    if (param.keyType) {
+      return `  ${param.name}: {[key: ${param.keyType}]: ${param.type}};`;
+    }
+    return `  ${param.name}: ${param.type};`;
+  });
 
-    // if (fieldParams.nested) {
-    //   Object.keys(fieldParams.nested).forEach(key => {
-    //     strs.push(`  ${key}: ${key};\n`);
-    //   });
-    // }
+  // if (fieldParams.nested) {
+  //   Object.keys(fieldParams.nested).forEach(key => {
+  //     strs.push(`  ${key}: ${key};\n`);
+  //   });
+  // }
 
-    return {
-        name: item.name,
-        fields: arrs,
-    };
+  return {
+    name: item.name,
+    fields: arrs,
+  };
 }

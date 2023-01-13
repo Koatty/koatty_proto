@@ -3,7 +3,7 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-12-13 16:32:47
- * @LastEditTime: 2021-12-13 16:32:48
+ * @LastEditTime: 2023-01-13 10:20:23
  */
 import protobufjs, { IService, IType, IEnum, Root } from 'protobufjs';
 import { printEnum } from './enum';
@@ -18,7 +18,7 @@ import { printMethod } from './method';
  * @interface OptionType
  */
 const defaultOptions: OptionType = {
-    isDefinition: false
+  isDefinition: false
 };
 
 
@@ -31,8 +31,8 @@ const defaultOptions: OptionType = {
  * @returns {protobufjs.INamespace}  
  */
 export function parseProto(source: string): protobufjs.INamespace {
-    const res = protobufjs.parse(source, { keepCase: true });
-    return parseProtoRoot(res.root, res.package);
+  const res = protobufjs.parse(source, { keepCase: true });
+  return parseProtoRoot(res.root, res.package);
 }
 
 /**
@@ -44,27 +44,27 @@ export function parseProto(source: string): protobufjs.INamespace {
  * @returns {object}
  */
 export function parseMethods(json: protobufjs.INamespace, options?: OptionType): object {
-    if (!options) {
-        options = defaultOptions;
+  if (!options) {
+    options = defaultOptions;
+  }
+  const nested = json.nested;
+  const res: any = {};
+  if (nested) {
+    for (const name in nested) {
+      if (Object.prototype.hasOwnProperty.call(nested, name)) {
+        const value = nested[name];
+        Object.keys(value).map(category => {
+          if (category === 'methods') {
+            res[name] = printMethod(name, value as IService, options);
+          }
+          if (category === 'nested') {
+            res[name] = parseMethods(value, options);
+          }
+        });
+      }
     }
-    const nested = json.nested;
-    const res: any = {};
-    if (nested) {
-        for (const name in nested) {
-            if (Object.prototype.hasOwnProperty.call(nested, name)) {
-                const value = nested[name];
-                Object.keys(value).map(category => {
-                    if (category === 'methods') {
-                        res[name] = printMethod(name, value as IService, options);
-                    }
-                    if (category === 'nested') {
-                        res[name] = parseMethods(value, options);
-                    }
-                });
-            }
-        }
-    }
-    return res;
+  }
+  return res;
 }
 
 /**
@@ -76,27 +76,27 @@ export function parseMethods(json: protobufjs.INamespace, options?: OptionType):
  * @returns {object>}
  */
 export function parseFields(json: protobufjs.INamespace, options?: OptionType): object {
-    if (!options) {
-        options = defaultOptions;
+  if (!options) {
+    options = defaultOptions;
+  }
+  const nested = json.nested;
+  const res: any = {};
+  if (nested) {
+    for (const name in nested) {
+      if (Object.prototype.hasOwnProperty.call(nested, name)) {
+        const value = nested[name];
+        Object.keys(value).map(category => {
+          if (category === 'fields') {
+            res[name] = printField(name, value as IType, options);
+          }
+          if (category === 'nested') {
+            res[name] = parseFields(value, options);
+          }
+        });
+      }
     }
-    const nested = json.nested;
-    const res: any = {};
-    if (nested) {
-        for (const name in nested) {
-            if (Object.prototype.hasOwnProperty.call(nested, name)) {
-                const value = nested[name];
-                Object.keys(value).map(category => {
-                    if (category === 'fields') {
-                        res[name] = printField(name, value as IType, options);
-                    }
-                    if (category === 'nested') {
-                        res[name] = parseFields(value, options);
-                    }
-                });
-            }
-        }
-    }
-    return res;
+  }
+  return res;
 }
 
 /**
@@ -108,27 +108,27 @@ export function parseFields(json: protobufjs.INamespace, options?: OptionType): 
  * @returns {object} 
  */
 export function parseValues(json: protobufjs.INamespace, options?: OptionType): object {
-    if (!options) {
-        options = defaultOptions;
+  if (!options) {
+    options = defaultOptions;
+  }
+  const nested = json.nested;
+  const res: any = {};
+  if (nested) {
+    for (const name in nested) {
+      if (Object.prototype.hasOwnProperty.call(nested, name)) {
+        const value = nested[name];
+        Object.keys(value).map(category => {
+          if (category === 'values') {
+            res[name] = printEnum(name, value as IEnum, options);
+          }
+          if (category === 'nested') {
+            res[name] = parseValues(value, options);
+          }
+        });
+      }
     }
-    const nested = json.nested;
-    const res: any = {};
-    if (nested) {
-        for (const name in nested) {
-            if (Object.prototype.hasOwnProperty.call(nested, name)) {
-                const value = nested[name];
-                Object.keys(value).map(category => {
-                    if (category === 'values') {
-                        res[name] = printEnum(name, value as IEnum, options);
-                    }
-                    if (category === 'nested') {
-                        res[name] = parseValues(value, options);
-                    }
-                });
-            }
-        }
-    }
-    return res;
+  }
+  return res;
 }
 
 
@@ -143,9 +143,9 @@ export function parseValues(json: protobufjs.INamespace, options?: OptionType): 
  * @returns {protobufjs.INamespace}  
  */
 export function parseProtoRoot(root: Root, packageName?: string): any {
-    if (packageName) {
-        const _root = root.lookup(packageName);
-        return _root?.toJSON();
-    }
-    return root.toJSON();
+  if (packageName) {
+    const _root = root.lookup(packageName);
+    return _root?.toJSON();
+  }
+  return root.toJSON();
 }

@@ -3,7 +3,7 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:20:51
- * @LastEditTime: 2021-11-24 10:02:04
+ * @LastEditTime: 2023-01-13 10:20:19
  */
 import { IService, IMethod } from 'protobufjs';
 import { OptionType } from './interface';
@@ -20,21 +20,21 @@ const EMPTY = 'google.protobuf.Empty';
  * @returns {*}  
  */
 function readMethod(name: string,
-    content: {
-        [k: string]: IMethod;
-    }
+  content: {
+    [k: string]: IMethod;
+  }
 ) {
-    const params = Object.keys(content).map(paramName => {
-        const paramValue = content[paramName];
+  const params = Object.keys(content).map(paramName => {
+    const paramValue = content[paramName];
 
-        return { name: paramName, ...paramValue };
-    });
+    return { name: paramName, ...paramValue };
+  });
 
-    return {
-        category: 'methods',
-        name: name,
-        params
-    };
+  return {
+    category: 'methods',
+    name: name,
+    params
+  };
 }
 
 /**
@@ -47,26 +47,26 @@ function readMethod(name: string,
  * @returns {*}  
  */
 export function printMethod(
-    name: string,
-    methodContent: IService,
-    options: OptionType
+  name: string,
+  methodContent: IService,
+  options: OptionType
 ) {
-    const content = methodContent.methods;
-    const item = readMethod(name, content);
+  const content = methodContent.methods;
+  const item = readMethod(name, content);
 
-    const arrs = item.params.map(param => {
-        const requestType =
-            param.requestType === EMPTY ? '' : param.requestType;
-        const responseType =
-            param.responseType === EMPTY ? 'any' : param.responseType;
+  const arrs = item.params.map(param => {
+    const requestType =
+      param.requestType === EMPTY ? '' : param.requestType;
+    const responseType =
+      param.responseType === EMPTY ? 'any' : param.responseType;
 
-        return {
-            name: param.name,
-            requestType: requestType,
-            responseType: responseType,
-        };
+    return {
+      name: param.name,
+      requestType: requestType,
+      responseType: responseType,
+    };
 
-    });
+  });
 
-    return arrs;
+  return arrs;
 }
