@@ -12,9 +12,9 @@ export interface ProtoDefHandler
 
 ## Properties
 
-|  Property | Type | Description |
-|  --- | --- | --- |
-|  [fn?](./koatty_proto.protodefhandler.fn.md) | Function | <i>(Optional)</i> |
-|  [name](./koatty_proto.protodefhandler.name.md) | string |  |
-|  [path](./koatty_proto.protodefhandler.path.md) | string |  |
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [fn?](./koatty_proto.protodefhandler.fn.md) |  | Function | <i>(Optional)</i> |
+|  [name](./koatty_proto.protodefhandler.name.md) |  | string |  |
+|  [path](./koatty_proto.protodefhandler.path.md) |  | string |  |
 

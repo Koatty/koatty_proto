@@ -8,13 +8,13 @@
 
 |  Function | Description |
 |  --- | --- |
-|  [ListServices(def)](./koatty_proto.listservices.md) | ListServices |
-|  [LoadProto(protoFile, options)](./koatty_proto.loadproto.md) | LoadProto |
-|  [parseFields(json, options)](./koatty_proto.parsefields.md) | parseFields |
-|  [parseMethods(json, options)](./koatty_proto.parsemethods.md) | parseMethods |
-|  [parseProto(source)](./koatty_proto.parseproto.md) | parseProto |
+|  [ListServices(def)](./koatty_proto.listservices.md) | <p>ListServices</p> |
+|  [LoadProto(protoFile, options)](./koatty_proto.loadproto.md) | <p>LoadProto</p> |
+|  [parseFields(json, options)](./koatty_proto.parsefields.md) | <p>parseFields</p> |
+|  [parseMethods(json, options)](./koatty_proto.parsemethods.md) | <p>parseMethods</p> |
+|  [parseProto(source)](./koatty_proto.parseproto.md) | <p>parseProto</p> |
 |  [parseProtoRoot(root, packageName)](./koatty_proto.parseprotoroot.md) |  |
-|  [parseValues(json, options)](./koatty_proto.parsevalues.md) | parseValues |
+|  [parseValues(json, options)](./koatty_proto.parsevalues.md) | <p>parseValues</p> |
 
 ## Interfaces
 
