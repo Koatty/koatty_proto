@@ -4,7 +4,7 @@
 
 ## ProtoDefHandler interface
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export interface ProtoDefHandler 
@@ -14,7 +14,7 @@ export interface ProtoDefHandler
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [fn?](./koatty_proto.protodefhandler.fn.md) |  | Function | <i>(Optional)</i> |
+|  [fn?](./koatty_proto.protodefhandler.fn.md) |  | Function | _(Optional)_ |
 |  [name](./koatty_proto.protodefhandler.name.md) |  | string |  |
 |  [path](./koatty_proto.protodefhandler.path.md) |  | string |  |
 

@@ -4,7 +4,7 @@
 
 ## ProtoDef.service property
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 service: ServiceDefinition;

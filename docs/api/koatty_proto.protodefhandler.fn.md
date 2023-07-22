@@ -4,7 +4,7 @@
 
 ## ProtoDefHandler.fn property
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 fn?: Function;

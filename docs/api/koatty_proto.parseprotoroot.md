@@ -5,7 +5,7 @@
 ## parseProtoRoot() function
 
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export declare function parseProtoRoot(root: Root, packageName?: string): any;
@@ -16,9 +16,9 @@ export declare function parseProtoRoot(root: Root, packageName?: string): any;
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  root | Root |  |
-|  packageName | string | <i>(Optional)</i> |
+|  packageName | string | _(Optional)_ |
 
-<b>Returns:</b>
+**Returns:**
 
 any
 

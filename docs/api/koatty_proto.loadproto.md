@@ -7,7 +7,7 @@
 LoadProto
 
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export declare function LoadProto(protoFile: string, options?: Options): GrpcObject;
@@ -18,9 +18,9 @@ export declare function LoadProto(protoFile: string, options?: Options): GrpcObj
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  protoFile | string |  |
-|  options | Options | <i>(Optional)</i> |
+|  options | Options | _(Optional)_ |
 
-<b>Returns:</b>
+**Returns:**
 
 GrpcObject
 

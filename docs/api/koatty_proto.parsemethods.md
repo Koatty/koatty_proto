@@ -7,7 +7,7 @@
 parseMethods
 
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export declare function parseMethods(json: protobufjs.INamespace, options?: OptionType): object;
@@ -18,9 +18,9 @@ export declare function parseMethods(json: protobufjs.INamespace, options?: Opti
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  json | protobufjs.INamespace |  |
-|  options | OptionType | <i>(Optional)</i> |
+|  options | OptionType | _(Optional)_ |
 
-<b>Returns:</b>
+**Returns:**
 
 object
 

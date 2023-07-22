@@ -4,7 +4,7 @@
 
 ## ProtoDef.handlers property
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 handlers: ProtoDefHandler[];

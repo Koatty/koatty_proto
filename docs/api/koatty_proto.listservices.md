@@ -7,7 +7,7 @@
 ListServices
 
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export declare function ListServices(def: GrpcObject | ProtobufTypeDefinition): ProtoDef[];
@@ -19,7 +19,7 @@ export declare function ListServices(def: GrpcObject | ProtobufTypeDefinition): 
 |  --- | --- | --- |
 |  def | GrpcObject \| ProtobufTypeDefinition |  |
 
-<b>Returns:</b>
+**Returns:**
 
 [ProtoDef](./koatty_proto.protodef.md)<!-- -->\[\]
 

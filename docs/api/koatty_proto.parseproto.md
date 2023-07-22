@@ -7,7 +7,7 @@
 parseProto
 
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export declare function parseProto(source: string): protobufjs.INamespace;
@@ -19,7 +19,7 @@ export declare function parseProto(source: string): protobufjs.INamespace;
 |  --- | --- | --- |
 |  source | string |  |
 
-<b>Returns:</b>
+**Returns:**
 
 protobufjs.INamespace
 
