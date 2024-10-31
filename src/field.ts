@@ -3,7 +3,7 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:19:07
- * @LastEditTime: 2023-01-13 10:20:03
+ * @LastEditTime: 2024-10-31 16:41:36
  */
 import { IType, IField, IMapField } from 'protobufjs';
 import { OptionType } from './interface';
@@ -80,10 +80,10 @@ function readField(name: string,
  * @export
  * @param {string} name
  * @param {IType} fieldParams
- * @param {OptionType} options
+ * @param {OptionType} _options
  * @returns {*}  
  */
-export function printField(name: string, fieldParams: IType, options: OptionType) {
+export function printField(name: string, fieldParams: IType, _options: OptionType) {
   const content = fieldParams.fields;
 
   const item = readField(name, content);

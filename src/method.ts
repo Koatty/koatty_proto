@@ -3,7 +3,7 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:20:51
- * @LastEditTime: 2023-01-13 10:20:19
+ * @LastEditTime: 2024-10-31 16:41:50
  */
 import { IService, IMethod } from 'protobufjs';
 import { OptionType } from './interface';
@@ -43,13 +43,13 @@ function readMethod(name: string,
  * @export
  * @param {string} name
  * @param {IService} methodContent
- * @param {OptionType} options
+ * @param {OptionType} _options
  * @returns {*}  
  */
 export function printMethod(
   name: string,
   methodContent: IService,
-  options: OptionType
+  _options: OptionType
 ) {
   const content = methodContent.methods;
   const item = readMethod(name, content);

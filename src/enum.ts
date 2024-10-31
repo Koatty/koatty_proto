@@ -3,7 +3,7 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-11-23 23:15:56
- * @LastEditTime: 2023-01-13 10:19:57
+ * @LastEditTime: 2024-10-31 16:41:21
  */
 import { IEnum } from 'protobufjs';
 import { OptionType } from './interface';
@@ -14,10 +14,10 @@ import { OptionType } from './interface';
  * @export
  * @param {string} name
  * @param {IEnum} enumContent
- * @param {OptionType} options
+ * @param {OptionType} _options
  * @returns {*}  
  */
-export function printEnum(name: string, enumContent: IEnum, options: OptionType) {
+export function printEnum(name: string, enumContent: IEnum, _options: OptionType) {
   const content = enumContent.values;
   const item = Object.keys(content)
     .map(key => ({
