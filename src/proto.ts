@@ -3,11 +3,11 @@
  * @Usage: 
  * @Author: richen
  * @Date: 2021-12-13 16:33:32
- * @LastEditTime: 2023-01-13 10:20:29
+ * @LastEditTime: 2024-11-06 18:37:12
  */
-import * as Helper from "koatty_lib";
 import { GrpcObject, loadPackageDefinition, ServiceDefinition } from "@grpc/grpc-js";
 import { loadSync, Options, ProtobufTypeDefinition } from "@grpc/proto-loader";
+import { Helper } from "koatty_lib";
 
 /**
  *
