@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/Koatty/koatty_proto/compare/v1.2.0...v1.3.0) (2025-06-09)
+
+
+### Features
+
+* add circular reference detection in parsing functions and ListServices ([e6c8c4e](https://github.com/Koatty/koatty_proto/commit/e6c8c4eb9849e0a70a72fbf3da269e9e4327c177))
+
 ## [1.2.0](https://github.com/Koatty/koatty_proto/compare/v1.1.14...v1.2.0) (2024-11-06)
 
 ### [1.1.14](https://github.com/Koatty/koatty_proto/compare/v1.1.13...v1.1.14) (2024-10-31)
