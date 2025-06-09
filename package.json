@@ -39,7 +39,7 @@
     "@microsoft/api-extractor": "^7.x.x",
     "@rollup/plugin-commonjs": "^28.x.x",
     "@rollup/plugin-json": "^6.x.x",
-    "@rollup/plugin-node-resolve": "^15.x.x",
+    "@rollup/plugin-node-resolve": "^16.x.x",
     "@types/jest": "^29.x.x",
     "@types/koa": "^2.x.x",
     "@types/koa-compose": "^3.x.x",
@@ -66,10 +66,10 @@
     "typescript": "^5.x.x"
   },
   "dependencies": {
-    "@grpc/grpc-js": "^1.12.2",
-    "@grpc/proto-loader": "^0.7.13",
+    "@grpc/grpc-js": "^1.13.4",
+    "@grpc/proto-loader": "^0.7.15",
     "koatty_lib": "^1.x.x",
-    "protobufjs": "^7.4.0"
+    "protobufjs": "^7.5.3"
   },
   "peerDependencies": {
     "koatty_lib": "^1.x.x"
