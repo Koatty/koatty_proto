@@ -4,25 +4,26 @@
 
 ## parseValues() function
 
-parseValues
+parseValues - 递归解析枚举值定义，支持循环引用检测
 
 
 **Signature:**
 
 ```typescript
-export declare function parseValues(json: protobufjs.INamespace, options?: OptionType): object;
+export declare function parseValues(json: protobufjs.INamespace, options?: OptionType, visited?: Set<any>): object;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  json | protobufjs.INamespace |  |
-|  options | OptionType | _(Optional)_ |
+|  json | protobufjs.INamespace | 要解析的命名空间对象 |
+|  options | OptionType | _(Optional)_ 解析选项 |
+|  visited | Set&lt;any&gt; | _(Optional)_ 用于检测循环引用的访问记录集合 |
 
 **Returns:**
 
 object
 
-{<!-- -->object<!-- -->}
+{<!-- -->object<!-- -->} 解析后的枚举值定义对象
 

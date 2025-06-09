@@ -8,13 +8,13 @@
 
 |  Function | Description |
 |  --- | --- |
-|  [ListServices(def)](./koatty_proto.listservices.md) | <p>ListServices</p> |
+|  [ListServices(def, visited)](./koatty_proto.listservices.md) | <p>ListServices - 递归解析服务定义，支持循环引用检测</p> |
 |  [LoadProto(protoFile, options)](./koatty_proto.loadproto.md) | <p>LoadProto</p> |
-|  [parseFields(json, options)](./koatty_proto.parsefields.md) | <p>parseFields</p> |
-|  [parseMethods(json, options)](./koatty_proto.parsemethods.md) | <p>parseMethods</p> |
+|  [parseFields(json, options, visited)](./koatty_proto.parsefields.md) | <p>parseFields - 递归解析字段定义，支持循环引用检测</p> |
+|  [parseMethods(json, options, visited)](./koatty_proto.parsemethods.md) | <p>parseMethods - 递归解析方法定义，支持循环引用检测</p> |
 |  [parseProto(source)](./koatty_proto.parseproto.md) | <p>parseProto</p> |
 |  [parseProtoRoot(root, packageName)](./koatty_proto.parseprotoroot.md) |  |
-|  [parseValues(json, options)](./koatty_proto.parsevalues.md) | <p>parseValues</p> |
+|  [parseValues(json, options, visited)](./koatty_proto.parsevalues.md) | <p>parseValues - 递归解析枚举值定义，支持循环引用检测</p> |
 
 ## Interfaces
 

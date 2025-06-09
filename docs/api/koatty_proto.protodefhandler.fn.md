@@ -7,5 +7,5 @@
 **Signature:**
 
 ```typescript
-fn?: Function;
+fn?: (...args: any[]) => any;
 ```

@@ -4,25 +4,26 @@
 
 ## parseFields() function
 
-parseFields
+parseFields - 递归解析字段定义，支持循环引用检测
 
 
 **Signature:**
 
 ```typescript
-export declare function parseFields(json: protobufjs.INamespace, options?: OptionType): object;
+export declare function parseFields(json: protobufjs.INamespace, options?: OptionType, visited?: Set<any>): object;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  json | protobufjs.INamespace |  |
-|  options | OptionType | _(Optional)_ |
+|  json | protobufjs.INamespace | 要解析的命名空间对象 |
+|  options | OptionType | _(Optional)_ 解析选项 |
+|  visited | Set&lt;any&gt; | _(Optional)_ 用于检测循环引用的访问记录集合 |
 
 **Returns:**
 
 object
 
-{<!-- -->object<!-- -->&gt;<!-- -->}
+{<!-- -->object<!-- -->} 解析后的字段定义对象
 

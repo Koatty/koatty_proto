@@ -4,24 +4,25 @@
 
 ## ListServices() function
 
-ListServices
+ListServices - 递归解析服务定义，支持循环引用检测
 
 
 **Signature:**
 
 ```typescript
-export declare function ListServices(def: GrpcObject | ProtobufTypeDefinition): ProtoDef[];
+export declare function ListServices(def: GrpcObject | ProtobufTypeDefinition, visited?: Set<any>): ProtoDef[];
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  def | GrpcObject \| ProtobufTypeDefinition |  |
+|  def | GrpcObject \| ProtobufTypeDefinition | 要解析的定义对象 |
+|  visited | Set&lt;any&gt; | _(Optional)_ 用于检测循环引用的访问记录集合 |
 
 **Returns:**
 
 [ProtoDef](./koatty_proto.protodef.md)<!-- -->\[\]
 
-{<!-- -->\*<!-- -->} {<!-- -->\*<!-- -->}
+{<!-- -->ProtoDef\[\]<!-- -->} 解析后的服务定义数组
 
