@@ -5,11 +5,11 @@
  * @Date: 2021-12-13 16:32:47
  * @LastEditTime: 2025-01-28
  */
-import protobufjs, { IService, IType, IEnum, Root } from 'protobufjs';
+import protobufjs, { IService, IType, IEnum, Root, IMethod } from 'protobufjs';
 import { printEnum, EnumResult } from './enum';
 import { printField, FieldResult } from './field';
 import { OptionType } from './interface';
-import { printMethod, MethodResult } from './method';
+import { MethodResult } from './method';
 
 /**
  * 解析类别类型
@@ -27,6 +27,27 @@ type ProcessorFunction = (name: string, value: any, options: OptionType) => any;
 const DEFAULT_OPTIONS: Readonly<OptionType> = Object.freeze({
   isDefinition: false
 });
+
+const EMPTY = 'google.protobuf.Empty';
+
+/**
+ * 读取方法参数
+ *
+ * @param name - 方法名称
+ * @param content - 方法内容对象
+ * @returns 方法参数信息
+ */
+function readMethod(name: string, content: { [k: string]: protobufjs.IMethod }): { category: string; name: string; params: Array<{ name: string; requestType: string; responseType: string }> } {
+  const params = Object.keys(content).map(paramName => {
+    const paramValue = content[paramName];
+    const requestType = paramValue.requestType === EMPTY ? '' : paramValue.requestType;
+    const responseType = paramValue.responseType === EMPTY ? 'any' : paramValue.responseType;
+
+    return { name: paramName, requestType, responseType };
+  });
+
+  return { category: 'methods', name, params };
+}
 
 
 
