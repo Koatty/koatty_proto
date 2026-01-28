@@ -15,10 +15,53 @@ export declare function LoadProto(protoFile: string, options?: Options): GrpcObj
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  protoFile | string |  |
-|  options | Options | _(Optional)_ |
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+protoFile
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+options
+
+
+</td><td>
+
+Options
+
+
+</td><td>
+
+_(Optional)_
+
+
+</td></tr>
+</tbody></table>
 
 **Returns:**
 

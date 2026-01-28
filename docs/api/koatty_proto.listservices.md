@@ -15,10 +15,55 @@ export declare function ListServices(def: GrpcObject | ProtobufTypeDefinition, v
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  def | GrpcObject \| ProtobufTypeDefinition | 要解析的定义对象 |
-|  visited | Set&lt;any&gt; | _(Optional)_ 用于检测循环引用的访问记录集合 |
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+def
+
+
+</td><td>
+
+GrpcObject \| ProtobufTypeDefinition
+
+
+</td><td>
+
+要解析的定义对象
+
+
+</td></tr>
+<tr><td>
+
+visited
+
+
+</td><td>
+
+Set&lt;any&gt;
+
+
+</td><td>
+
+_(Optional)_ 用于检测循环引用的访问记录集合
+
+
+</td></tr>
+</tbody></table>
 
 **Returns:**
 

@@ -15,11 +15,71 @@ export declare function parseMethods(json: protobufjs.INamespace, options?: Opti
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  json | protobufjs.INamespace | 要解析的命名空间对象 |
-|  options | OptionType | _(Optional)_ 解析选项 |
-|  visited | Set&lt;any&gt; | _(Optional)_ 用于检测循环引用的访问记录集合 |
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+json
+
+
+</td><td>
+
+protobufjs.INamespace
+
+
+</td><td>
+
+要解析的命名空间对象
+
+
+</td></tr>
+<tr><td>
+
+options
+
+
+</td><td>
+
+OptionType
+
+
+</td><td>
+
+_(Optional)_ 解析选项
+
+
+</td></tr>
+<tr><td>
+
+visited
+
+
+</td><td>
+
+Set&lt;any&gt;
+
+
+</td><td>
+
+_(Optional)_ 用于检测循环引用的访问记录集合
+
+
+</td></tr>
+</tbody></table>
 
 **Returns:**
 

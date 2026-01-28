@@ -13,10 +13,53 @@ export declare function parseProtoRoot(root: Root, packageName?: string): any;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  root | Root |  |
-|  packageName | string | _(Optional)_ |
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+root
+
+
+</td><td>
+
+Root
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+packageName
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+_(Optional)_
+
+
+</td></tr>
+</tbody></table>
 
 **Returns:**
 

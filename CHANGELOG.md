@@ -1,13 +1,19 @@
 # Changelog
 
+## 1.3.1
+
+### Patch Changes
+
+- Updated dependencies
+  - koatty_lib@1.4.2
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ## [1.3.0](https://github.com/Koatty/koatty_proto/compare/v1.2.0...v1.3.0) (2025-06-09)
 
-
 ### Features
 
-* add circular reference detection in parsing functions and ListServices ([e6c8c4e](https://github.com/Koatty/koatty_proto/commit/e6c8c4eb9849e0a70a72fbf3da269e9e4327c177))
+- add circular reference detection in parsing functions and ListServices ([e6c8c4e](https://github.com/Koatty/koatty_proto/commit/e6c8c4eb9849e0a70a72fbf3da269e9e4327c177))
 
 ## [1.2.0](https://github.com/Koatty/koatty_proto/compare/v1.1.14...v1.2.0) (2024-11-06)
 
@@ -23,10 +29,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.1.9](https://github.com/Koatty/koatty_proto/compare/v1.1.8...v1.1.9) (2022-10-31)
 
-
 ### Bug Fixes
 
-* upgrade deps ([06fc115](https://github.com/Koatty/koatty_proto/commit/06fc1157b4bc2014a49a240626a7280b808d2acd))
+- upgrade deps ([06fc115](https://github.com/Koatty/koatty_proto/commit/06fc1157b4bc2014a49a240626a7280b808d2acd))
 
 ### [1.1.8](https://github.com/Koatty/koatty_proto/compare/v1.1.7...v1.1.8) (2022-05-27)
 

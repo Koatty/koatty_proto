@@ -14,9 +14,77 @@ export interface ProtoDef
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [handlers](./koatty_proto.protodef.handlers.md) |  | [ProtoDefHandler](./koatty_proto.protodefhandler.md)<!-- -->\[\] |  |
-|  [name](./koatty_proto.protodef.name.md) |  | string |  |
-|  [service](./koatty_proto.protodef.service.md) |  | ServiceDefinition |  |
+<table><thead><tr><th>
+
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[handlers](./koatty_proto.protodef.handlers.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[ProtoDefHandler](./koatty_proto.protodefhandler.md)<!-- -->\[\]
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[name](./koatty_proto.protodef.name.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[service](./koatty_proto.protodef.service.md)
+
+
+</td><td>
+
+
+</td><td>
+
+ServiceDefinition
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
 
