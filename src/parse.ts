@@ -5,7 +5,7 @@
  * @Date: 2021-12-13 16:32:47
  * @LastEditTime: 2025-01-28
  */
-import protobufjs, { IService, IType, IEnum, Root, IMethod } from 'protobufjs';
+import protobufjs, { IService, IType, IEnum, Root } from 'protobufjs';
 import { printEnum, EnumResult } from './enum';
 import { printField, FieldResult } from './field';
 import { OptionType } from './interface';
