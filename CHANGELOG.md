@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.2
+
+### Patch Changes
+
+- build
+
 ## 1.3.1
 
 ### Patch Changes
