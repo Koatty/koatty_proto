@@ -64,7 +64,7 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.14.3",
     "@grpc/proto-loader": "^0.8.0",
-    "koatty_lib": "^1.4.5",
+    "koatty_lib": "workspace:*",
     "protobufjs": "^8.0.0"
   },
   "peerDependencies": {
