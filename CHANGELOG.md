@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.8
+
+### Patch Changes
+
+- Updated dependencies
+  - koatty_lib@1.4.8
+
 ## 1.3.7
 
 ### Patch Changes
