@@ -87,7 +87,9 @@ export function ListServices(
 
   try {
     for (const [propName, value] of Object.entries(def)) {
-      if (value && typeof value === 'object') {
+      // grpc-js loadPackageDefinition builds namespaces as plain objects and
+      // service entries as CONSTRUCTOR FUNCTIONS carrying a `.service` property
+      if (value && (typeof value === 'object' || (typeof value === 'function' && 'service' in value))) {
         if ('service' in value && typeof (value as { service: unknown }).service === 'object') {
           const service = (value as { service: ServiceDefinition }).service;
           const handlers: ProtoDefHandler[] = [];
@@ -100,7 +102,7 @@ export function ListServices(
           }
 
           results.push({ name: propName, service, handlers });
-        } else if (!('type' in value)) {
+        } else if (typeof value === 'object' && !('type' in value)) {
           results.push(...ListServices(value as GrpcObject, visited));
         }
       }
